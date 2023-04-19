@@ -17,7 +17,12 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 <body>
+
    <style>
+      .tips-box img {
+         width:410px;
+         height:280px;
+      }
       .signin {
   background-color: #4CAF50;
   border: none;
@@ -35,11 +40,7 @@
 .signin:hover {
   background-color: #3e8e41;
 }
-.c{
-   font-size:20px;
-   display:flex;
-   justify-content: center;
-}
+/* css phần tài khoản đăng nhập trên thanh header */
 .a{
    font-size:15px;
     width: 30px;
@@ -47,21 +48,48 @@
     border: 0.1875em solid #0F1C3F;
     height: 30px;
    }
-
-    .img {
-        margin-top: 15px;
-        max-width: 80%;
-    }
-
-    .c:hover .b{
-    display: block;
-}
 .b{
-    padding: 40px;
-    position: absolute;
-    padding-left: 70px;
-    display: none;
-   
+ display : none;
+}
+.ab{
+    display: flex;
+}
+.c:hover .b {
+  margin-left:33px;
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  padding: 10px;
+  width: 150px;
+  z-index: 1;
+}
+
+.c .b p {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+.c .b a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.c .b a:hover {
+  color: #ff6600;
+}
+p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.heading_1{
+   margin-top:40px;
+}
+.tips p{
+   margin-top:20px;
 }
    </style>
     <div class="container">
@@ -70,7 +98,7 @@
         ?>
   <header class="header">
 
-   <a href="#" class="logo"> <i class="fas fa-lightbulb"></i> Fptshop.com</a>
+   <a href="#" class="logo"> <i class="fas fa-lightbulb"></i> THC.com</a>
 
    <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>
@@ -87,7 +115,7 @@
                      <button class="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
                     </div>';
                 } else {
-                    echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
+                  echo '<div class="c"><div class=ab><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p> </div>
                     <div class="b">
                     <p> <a href="../control/login_out.php">Đăng xuất</a></p>
                     <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
@@ -118,8 +146,8 @@
    </div>
 
    <div class="content">
-      <h3 class="about-title">Chúng tôi có những lĩnh vực tốt nhất về hóa chất</h3>
-      <p>Tổ chức, cá nhân đề nghị cấp Giấh doanh lập 01 bộ hồ sơ gửi qua đường bưu điện hoặc gửi trực tiếp hoặc hệ thống dịch vụ công trực tuyến đến Bộ Công Thương (Cục Hóa chất); </p>
+      <h3 class="about-title">Chúng tôi có những lĩnh vực tốt nhất về Công nghệ </h3>
+      <p>Tổ chức, cá nhân đề nghị cấp Giấh doanh bưu điện hoặc gửi trực tiếp hoặc hệ thống dịch vụ công trực tuyến đến Bộ Công Thương (Cục Hóa chất); </p>
       <div class="icons-container">
          <div class="icons">
             <img src="./img/about-icon-1.png" alt="">
@@ -189,7 +217,7 @@
 
 </section>
 
-<h1 class="heading"> Các Sản phẩm hót của chúng tôi </h1>
+
         <?php
 
         require '../models/connect.php';
@@ -200,11 +228,13 @@
 
 
         ?>
-
-
-
         <div>
+         <div class= "heading_1">
+         <h1 class="heading"> Các Sản phẩm hót của chúng tôi </h1>
+         </div>
+      
             <div class="product mr">
+         
                 <?php for ($i = 0; $i < 4; $i++) : ?>
                     <div class="trangchu">
                         <div class="div">
@@ -230,26 +260,27 @@
 
         </div>
         <div class="showadd mr">
-            <h1>Show more</h1>
+        <h1 class="heading"> ShowMode </h1>
             <div class="tips">
                 <div class="tips-box mr">
-                    <img src="image/item5.png" alt="">
+                    <img src="image/mt.jpg" alt="">
                     <p>How to create a living room to love</p>
-                    <p>20 jan 2020</p>
+              
                 </div>
                 <div class="tips-box mr">
-                    <img src="image/item6.png" alt="">
+                    <img src="image/mt2.jpg" alt="">
                     <p>Solution for clean look working space
                     </p>
-                    <p>10 jan 2020</p>
+               
                 </div>
                 <div class="tips-box mr">
-                    <img src="image/item7.png" alt="">
-                    <p class="font-bold">Make your cooking activity more fun with good setup</p>
-                    <p>20 jan 2020</p>
+                    <img src="image/mt3.jpg" alt="">
+                    <p class="font-bold">Make your cooking</p>
+           
                 </div>
             </div>
         </div>
+
 <!-- footer section starts  -->
    
 <section class="footert">

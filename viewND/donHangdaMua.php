@@ -100,7 +100,7 @@ a {
                      <button class="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
                     </div>';
                 } else {
-                    echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
+                    echo '<div class="c"><div class=ab><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p> </div>                  
                     <div class="b">
                     <p> <a href="../control/login_out.php">Đăng xuất</a></p>
                     <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
@@ -124,7 +124,6 @@ a {
                     <th class="text-[white]">order status</th>
                     <th class="text-[white]">total_money</th>
                     <th></th>
-
 
                 </tr>
             </thead>

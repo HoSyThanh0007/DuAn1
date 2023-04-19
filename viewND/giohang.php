@@ -14,6 +14,8 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/layout.css">
+            <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <title>GIỎ HÀNG </title>
     </head>
     <style>
@@ -64,9 +66,6 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
     display: none;
    
 }
-   .table{
-    margin-top:30px;
-   }
    .close-navbar{
     display:;
    }
@@ -91,6 +90,159 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
 .signin:hover {
   background-color: #3e8e41;
 }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #4cae4c;
+  border-color: #3e8f3e;
+}
+
+.btn:active {
+  background-color: #449d44;
+  border-color: #398439;
+  box-shadow: none;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+img{
+    width:100px;
+    height:100px;
+}
+/* nut thanh toán*/
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgb(0,0,0,0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal.open{
+    display: flex;
+  }
+  .modal-container {
+    position: relative;
+    background: rgb(240, 234, 234);
+    width: 600px;
+    min-height: 300px;
+    max-width: calc(100%-32px);
+    animation: modalFadeIn ease.6s;
+  }
+  .modal-header {
+    background: rgb(38, 178, 77);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 35px;
+  }
+  .modal-close {  
+    position: absolute;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .modal-close:hover {
+    opacity: 1;
+    background: #6293ab;
+  }
+  .modal-boddy{
+    padding: 14px;
+  }
+  .modal-label{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+  
+  }
+  .modal-input {
+   margin-bottom: 24px;
+   border : 1px solid #ccc;
+   width: 100%;
+   padding: 15px;
+  }
+  #buy-tikets {
+    font-size: 15px;
+    padding: 18px;
+    background: #1d8e4a;
+    border: none;
+    text-transform: uppercase;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+  }
+  #buy-tikets:hover {
+     opacity: 0.9;
+     background: #022d41;
+  }
+  .modal-footer {
+  padding: 16px;
+  text-align: right;
+  }
+  .modal-footer a {
+  color: rgb(17, 216, 84);
+  }
+  @keyframes modalFadeIn {
+    from{
+        opacity: 0;
+       transform:translateY(-140px);
+    }
+    to{
+        opacity: 1;
+       transform: translateY(0);
+    }
+  }
     </style>
 
     <body>
@@ -114,7 +266,7 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
                      <button class="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
                     </div>';
                 } else {
-                    echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
+                    echo '<div class="c"><div class=ab><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p> </div>                  
                     <div class="b">
                     <p> <a href="../control/login_out.php">Đăng xuất</a></p>
                     <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
@@ -189,9 +341,53 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
                     </tr>
                 </tbody>
             </table>
-            <a href="./thongTin.php?id=<?= $tong?>"><button>Thanh Toán</button></a>
-                    </div>
-        </div>
+        <button class="btn js-buy-ticket">Thanh Toán</button>
+    </div>
+</div>
+                        <div class="modal js-modal">
+   <div class="modal-container js-modal-content">
+       <div class="modal-close js-modal-close">
+           <i class="ti-close">                      
+           </i>
+       </div>
+       <header class="modal-header">            
+         <i class="ti-bag"></i>
+            ĐĂNG KÝ 
+       </header>
+       <div class="modal-boddy"> 
+              <input id="tiket-quantity" type="text" class="modal-input" placeholder="Họ và tên">  
+              <input id="tiket-email" type="email" class="modal-input" placeholder="Số điện thoại">
+              <input id="tiket-email" type="email" class="modal-input" placeholder="Đơn vị công tác">  
+              <input id="tiket-email" type="email" class="modal-input" placeholder="Tên khóa học">
+     <button id="buy-tikets">
+         pay <i class="ti-check"></i>
+     </button>
+         </div>
+         <footer class="modal-footer">
+             <p class="modal-help"> Need <a href="">help</a></p>
+         </footer>
+     </div>
+   </div>
+<script>
+ const buyBtns= document.querySelectorAll('.js-buy-ticket')
+ const modal =document.querySelector('.js-modal')
+ const modalClose=document.querySelector('.js-modal-close')
+ const modalContent=document.querySelector('.js-modal-content')
+ function showBuyTicket (){
+     modal.classList.add('open')
+ }
+ function hideBuyTicket(){
+     modal.classList.remove('open')
+ }
+ for(const buyBtn of buyBtns){
+     buyBtn.addEventListener('click',showBuyTicket)
+ }
+ modalClose.addEventListener('click',hideBuyTicket)
+ modal.addEventListener('click',hideBuyTicket)
+ modalContent.addEventListener('click', function(event){
+     event.stopPropagation()    
+ })
+</script>
         <script src="./script.js"></script>
 
     </body>

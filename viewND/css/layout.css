@@ -80,7 +80,40 @@ a:hover {
   background-color: #3e8e41;
 }
 /*-------------------------------*/
-
+/* css phần tài khoản đăng nhập trên thanh header */
+.b{
+  display : none;
+ }
+ .ab{
+     display: flex;
+ }
+ .c:hover .b {
+   margin-left:33px;
+   display: block;
+   position: absolute;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 0 2px 4px rgba(0,0,0,.1);
+   padding: 10px;
+   width: 150px;
+   z-index: 1;
+ }
+ 
+ .c .b p {
+   margin: 0;
+   padding: 5px 0;
+   font-size: 16px;
+ }
+ 
+ .c .b a {
+   color: #333;
+   text-decoration: none;
+   font-size: 16px;
+ }
+ 
+ .c .b a:hover {
+   color: #ff6600;
+ }
 
 /* Tiêu đề*/
 
@@ -216,14 +249,6 @@ a:hover {
     color: red;
 }
 
-.mr {
-    margin-top: 50px;
-}
-
-.mr1 {
-    margin-top: 10px;
-}
-
 .showadd h1 {
     text-align: center;
 }
@@ -232,10 +257,8 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
-    height: 500px;
+    height: 360px;
 }
-
-
 /* .tips {
     width: 300px;
     height: 300px;
@@ -266,7 +289,6 @@ a:hover {
 .footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 100px;
 }
 
 .formdk h2 {
@@ -801,26 +823,6 @@ a.buynow {
   .footert .credit span {
     color: #0eb582;
   }
-  @media (max-width: 1200px) {
-    .header {
-      padding: 2rem 5%;
-    }
-    section {
-      padding: 3rem 5%;
-    }
-  }
-  /*  */
-  @media (max-width: 991px) {
-    html {
-      font-size: 55%;
-    }
-    .header {
-      padding: 2rem;
-    }
-    section {
-      padding: 3rem 2rem;
-    }
-  }
   .heading {
     text-align: center;
     margin-bottom: 3rem;
@@ -934,69 +936,6 @@ a.buynow {
   font-size: 1.5rem;
   line-height: 2;
   color: #777;
-}
-@media (max-width: 1200px) {
-  .header {
-    padding: 2rem 5%;
-  }
-  section {
-    padding: 3rem 5%;
-  }
-}
-@media (max-width: 991px) {
-  html {
-    font-size: 55%;
-  }
-  .header {
-    padding: 2rem;
-  }
-  section {
-    padding: 3rem 2rem;
-  }
-}
-@media (max-width: 768px) {
-  .header #menu-btn {
-    display: inline-block;
-  }
-  .header .navbar {
-    position: fixed;
-    top: 0;
-    right: -105%;
-    width: 30rem;
-    background: #fff;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    z-index: 1200;
-  }
-  .header .navbar #close-navbar {
-    display: block;
-  }
-  .header .navbar.active {
-    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
-    right: 0;
-  }
-  .header .navbar a {
-    display: block;
-    margin: 1rem 0;
-    text-align: center;
-    font-size: 3rem;
-  }
-  .home .slide .content h3 {
-    font-size: 3rem;
-  }
-}
-@media (max-width: 450px) {
-  html {
-    font-size: 50%;
-  }
-  .heading {
-    font-size: 3rem;
-  }
-  .about .content .about-title {
-    font-size: 4rem;
-  }
 }
 .banner{
   background: #f0fdfa;

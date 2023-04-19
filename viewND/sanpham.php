@@ -13,14 +13,6 @@
     <title>SẢN PHẨM</title>
 </head>
 <style>
-       .slide {
-        gap: 30px;
-        display: grid;
-        grid-template-columns: 0.3fr 1fr;
-        margin-top: 10%
-    }
-    
-
 
     .sanpham1 {
         display: grid;
@@ -34,14 +26,6 @@
     .sanpham1 span{
         padding: 0px 10px 30px 30px;
     }
-
-    .a {
-        width: 50px;
-        border-radius: 50%;
-        border: 0.1875em solid #0F1C3F;
-        height: 50px;
-    }
-
     
 
     .loai {
@@ -71,7 +55,7 @@
     }
 
     .sanpham {
-        width:800px;
+        width:900px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         border-radius: 5px;
@@ -93,75 +77,67 @@
         height: 300px;
     }
 
-    p input {
-        width: 250px;
-        margin-left: 10px;
-    }
+/* Kiểu cho form tìm kiếm */
+.loai .formdk {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-    h3 {
-        font-size: 25px;
-        font-weight: 700;
-        text-transform: capitalize;
+.loai .formdk .tim {
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-right:30px;
+}
 
-    }
+.loai .formdk .tim:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
 
-    .formdk {
-        margin: 15% 0px;
-    }
+.loai .formdk .timkiem {
+ margin-top:30px;
+  background-color: #4CAF50;
+  color: #fff;
+  width:80px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+}
 
-    .tim {
-        margin-left: 40px;
-    }
+/* Kiểu cho danh mục sản phẩm */
+.loai h1 {
+    color: #4CAF50;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
 
-    .timkiem {
-        background: rgb(19, 170, 84);
-        color: black;
-        height: 30px;
+.loai .loai1 {
+  padding: 10px;
+  font-size:16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
 
-    }
+.loai .loai1 h2 a {
+  color: #333;
+  text-decoration: none;
+}
 
-    .gia {
-        font-size: 22px;
-        font-weight: 600;
-        color: #A18A68;
-    }
-
-    .c:hover .b {
-        display: block;
-    }
-
-    .b {
-        /* padding: 40px; */
-        position: absolute;
-        /* padding-left: 70px; */
-        display: none;
-        z-index: 3;
-        top:100px;
-        right: 200px;
-       
-        border: 1px solid black;
-        border-collapse: collapse;
-        text-align: center;
-        border-radius: 5px;
-    }
-    .b p a{
-        text-decoration: none;
-    }
-
-    .c {
-        display: flex;
-    }
+.loai .loai1 h2 a:hover {
+  color: #4CAF50;
+}
     .slide {
         gap: 20px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-top: 10%
     }
-
-    .boxs {
-
-}
-
 .boxs p {
     font-size: 20px;
     justify-content: center;
@@ -182,62 +158,15 @@
       
     }
 
-    .c{
-   font-size:20px;
-   display:flex;
-   justify-content: center;
+
+    .hoveranh img {
+   object-fit: cover;
+   transition: transform .5s;
 }
-.a{
-   font-size:15px;
-    width: 30px;
-    border-radius: 50%;
-    border: 0.1875em solid #0F1C3F;
-    height: 30px;
-   }
 
-    .img {
-        margin-top: 15px;
-        max-width: 80%;
-    }
-
-    .c:hover .b{
-    display: block;
+.hoveranh:hover img {
+   transform: scale(1.1);
 }
-.b{
-    padding: 40px;
-    position: absolute;
-    padding-left: 70px;
-    display: none;
-   
-}
-    .loai {
-        border-radius: 5px;
-        width: 400px;
-        height: 500px;
-        border: 1px solid black;
-       
-     
-        
-    }
-    .loai h1 {
-        color: #0eb582;
-        font-size:28px;
-        width: 400px;
-        border-bottom: 1px solid black;
-        text-align: center;
-    }
-    .loai a {
-        font-size:24px;
-        text-decoration: none;
-        text-transform: capitalize;
-    }
-
-    .loai h2 {
-        padding-bottom: 25px;
-        width: 400px;
-        border-bottom:  1px  solid #cdcd;
-
-    }
     .sanpham {
         margin-right:15px;
         display: grid;
@@ -257,45 +186,26 @@
         border: 2px solid #360cdc;
         width: 250px;
     }
-
-    p input{
-        width: 250px;
-        margin-left: 10px;
-    }
-h3{
-    font-size: 16px;
-    font-weight:500;
-    text-transform: capitalize;
-
+    h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
 }
- .tim{
-    margin-top:5px;
-    width:200px;
-    height: 30px;
-    margin-left:100px;
-}
-.timkiem{
-    background: rgb(19, 170, 84);
-    color: black;
-    height: 30px;
 
+/* Kiểu cho phần tử p */
+p {
+  font-size: 20px;
+  line-height: 1.5;
 }
+
+/* Kiểu cho phần tử span.gia */
 .gia{
     font-size: 22px;
     font-weight: 600;
     color: #A18A68;
     margin-left: 2px;
 }
-.c:hover .b{
-    display: block;
-}
-.b{
-    padding: 40px;
-    position: absolute;
-    padding-left: 70px;
-    display: none;
-   
-}
+
 .signin {
   background-color: #4CAF50;
   border: none;
@@ -315,30 +225,71 @@ h3{
 .signin:hover {
   background-color: #3e8e41;
 }
+/* css phần tài khoản đăng nhập trên thanh header */
+.a{
+   font-size:15px;
+    width: 30px;
+    border-radius: 50%;
+    border: 0.1875em solid #0F1C3F;
+    height: 30px;
+   }
+.b{
+ display : none;
+}
+.ab{
+    display: flex;
+}
+.c:hover .b {
+  margin-left:33px;
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  padding: 10px;
+  width: 150px;
+  z-index: 1;
+}
+
+.c .b p {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+.c .b a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.c .b a:hover {
+  color: #ff6600;
+}
 </style>
 
 <body>
     <div class="container">
        
 
-<header class="header">
+     <header class="header">
            <a href="#" class="logo"> <i class="fas fa-lightbulb"></i> Fptshop.com</a>
 
-   <nav class="navbar">
+      <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>
       <a href="index.php">TRANG CHỦ</a>
       <a href="sanpham.php">SẢN PHẨM</a>
       <a href="lienhe.php">LIÊN HỆ</a>
       <a href="donHangdaMua.php">ĐƠN HÀNG</a>
       <a href="./giohang.php">GIỎ HÀNG</a>
-   </nav>
-   <?php
+      </nav>
+      <?php
                 if (empty($_SESSION["email"])) {
                     echo ' <div >                
                      <button class="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
                     </div>';
                 } else {
-                    echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
+                    echo '<div class="c"><div class=ab><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p> </div>
                     <div class="b">
                     <p> <a href="../control/login_out.php">Đăng xuất</a></p>
                     <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
@@ -391,13 +342,13 @@ if (empty($_GET["id"])) {
         <div class="formdk">
             <form action="./sanpham.php" method="POST">
 
-                <input type="text" name="search" class="tim">
+             
                 <input type="submit" value="Tìm kiếm" class="timkiem">
+                <input type="text" name="search" class="tim">
             </form>
 
-        </div>
-        <br>
-        <hr>
+        </div> 
+           <h1>Danh mục</h1>
         <?php foreach ($categoryidList as $item) : ?>
             <div class="loai1">
                 <h2>
@@ -413,8 +364,9 @@ if (empty($_GET["id"])) {
     <div class="sanpham">
         <?php foreach ($productList as $item1) : ?>
             <div class="sanpham1">
-
+                <div class="hoveranh">
                 <a href="./chiTietSanPham.php?id=<?= $item1["id"] ?>"><img src="<?= "../image/" . $item1["image"] ?>" alt=""> </a>
+        </div>
                 <h3>
                     <?= $item1["name"] ?>
                 </h3>
@@ -428,7 +380,6 @@ if (empty($_GET["id"])) {
             </div>
         <?php endforeach ?>
     </div>
-</div>
 </div>
     <!-- footer section starts  -->
 
@@ -475,9 +426,10 @@ if (empty($_GET["id"])) {
       </div>
 
    </div>
+
    </section>
 
-
+        </div>
 
 <!-- footer section ends -->
 <script src="./script.js"></script>
