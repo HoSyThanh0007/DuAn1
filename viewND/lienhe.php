@@ -25,7 +25,7 @@
     <div class="container">
 <header class="header">
 
-   <a href="#" class="logo"> <i class="fas fa-lightbulb"></i> educa </a>
+   <a href="#" class="logo"> Thcshop.com </a>
 
    <nav class="navbar">
    <div id="close-navbar" class="fas fa-times"></div>

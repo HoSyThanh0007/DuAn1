@@ -6,11 +6,11 @@
     $productImage = $_FILES["product-image"]["name"];
     $deal = $_POST["deal"];
     $productPrice = $_POST["product-price"];
-  
+    $soluong = $_POST["soluong"];
     $categoryId = $_POST["category"];
     
     
-    $query = "INSERT INTO products (name, descrtiption, image, deal, price, class) VALUES ('$productName','$productDesc','$productImage',$deal,$productPrice,$categoryId)";
+    $query = "INSERT INTO products (name, descrtiption, image, deal, price,soluong, class) VALUES ('$productName','$productDesc','$productImage',$deal,$productPrice,$soluong,$categoryId)";
     move_uploaded_file($_FILES["product-image"]["tmp_name"],"../image/".$_FILES["product-image"]["name"]);
    
     // var_dump($query);die;

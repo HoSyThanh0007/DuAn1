@@ -27,7 +27,9 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
             font-size:20px;
         }
         input{
-            width: 50px;
+          height:35px;
+          font-size:16px;;
+            width:100%;
         }
         .c:hover .b{
     display: block;
@@ -91,6 +93,7 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
   background-color: #3e8e41;
 }
 .table {
+  margin-top:20px;
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
@@ -233,6 +236,9 @@ img{
   .modal-footer a {
   color: rgb(17, 216, 84);
   }
+  p{
+    font-size:20px;
+  }
   @keyframes modalFadeIn {
     from{
         opacity: 0;
@@ -243,13 +249,14 @@ img{
        transform: translateY(0);
     }
   }
+
     </style>
 
     <body>
-    
+    <div class="container">
             
 <header class="header">
-           <a href="#" class="logo"> <i class="fas fa-lightbulb"></i> Fptshop.com</a>
+           <a href="#" class="logo"></i> Thcshop.com</a>
 
    <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>
@@ -277,7 +284,7 @@ img{
                 }
                 ?>
             </header>
-    <div class="container">
+
             <?php      
             require "../models/connect.php";
             $id_user = $_SESSION['id'];
@@ -352,20 +359,24 @@ img{
        </div>
        <header class="modal-header">            
          <i class="ti-bag"></i>
-            ĐĂNG KÝ 
+            Thông Tin
        </header>
+       <form action="../control/control_add_bill.php" method="POST">
        <div class="modal-boddy"> 
-              <input id="tiket-quantity" type="text" class="modal-input" placeholder="Họ và tên">  
-              <input id="tiket-email" type="email" class="modal-input" placeholder="Số điện thoại">
-              <input id="tiket-email" type="email" class="modal-input" placeholder="Đơn vị công tác">  
-              <input id="tiket-email" type="email" class="modal-input" placeholder="Tên khóa học">
-     <button id="buy-tikets">
-         pay <i class="ti-check"></i>
-     </button>
-         </div>
-         <footer class="modal-footer">
-             <p class="modal-help"> Need <a href="">help</a></p>
-         </footer>
+       <input type="text" hidden value="<?php echo $_SESSION['id'] ?>" name="id" id="">
+                <p for="">Số điện thoại</p>
+                <input type="text" name="sdt" id="">
+                <p for="">Họ và tên</p>
+                <input type="text" name="name" id="">
+                <p for="">địa chỉ</p>
+                <input type="text" name="diachi" id="">
+                <p for="">Tổng tiền</p>
+                <input type="text" value="<?= $tong ?>" name="tongTien" id="">
+            </div>
+            <button id="buy-tikets">
+               Mua <i class="ti-check"></i>
+            </button>
+          </form>
      </div>
    </div>
 <script>

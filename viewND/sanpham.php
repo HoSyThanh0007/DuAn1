@@ -273,7 +273,7 @@ p {
        
 
      <header class="header">
-           <a href="#" class="logo"> <i class="fas fa-lightbulb"></i> Fptshop.com</a>
+           <a href="#" class="logo">Thcshop.com</a>
 
       <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>

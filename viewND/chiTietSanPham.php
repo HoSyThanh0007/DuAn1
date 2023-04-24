@@ -209,13 +209,88 @@ margin-top:40px;
     font-style: italic;
     color: #999;
 }
+.soluong {
+    margin-top:20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.soluong b {
+  margin-bottom: 10px;
+}
+
+.soluong input[type="number"] {
+  color:red;
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.soluong input[type="number"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
+    .trangthai {
+  background-color: #f0fdfa;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.trangthai b {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.trangthai p {
+  margin: 5px 0;
+}
+
+.trangthai i {
+  margin-right: 10px;
+}
+giohang {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.giohang button {
+  background-color: #0eb582;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.giohang button:hover {
+  background-color: #0062cc;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.giohang button:focus {
+  outline: none;
+  background-color: #0062cc;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 </style>
 <body>
 
 <div class="container">
   <header class="header">
 
-   <a href="#" class="logo"> <i class="fas fa-lightbulb"></i> Fptshop.com</a>
+   <a href="#" class="logo">  Thcshop.com</a>
 
    <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>
@@ -274,18 +349,8 @@ margin-top:40px;
                     Giảm thêm 300.000đ khi thanh toán qua VNPAY khi mua các sản phẩm iPhone</p> 
                     <p>
  Nhận mã giảm giá tới 300.000đ qua ZaloPay khi mua iPhone 14 series - (Xem chi tiết)</p>
- <p>Thanh toán qua Moca tặng ngay đế sạc trị giá 320.000đ (Cho hóa đơn có tổng giá trị từ 15 Triệu) - Áp dụng từ 01/04 - (Xem chi tiết)</p>
- <p>Giảm thêm 30% tới 1,2 triệu khi mở thẻ TP Bank EVO - Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc 19002091 để được hỗ trợ - (Xem chi tiết)</p>
- <p>Trả góp qua Homepaylater giảm thêm tới 500.000đ, duyệt nhanh chỉ 30s - (Xem chi tiết)</p>
- <p>Mở thẻ tín dụng VPBank nhận ưu đãi tới 1.500.000đ - (Xem chi tiết)</p>
- <p>Hỗ trợ trả góp 0% qua 26 ngân hàng và công ty tài chính. - (Xem chi tiết)</p>
-                    </p>
+ <p>Thanh toán qua Moca tặng ngay đế sạc trị giá 320.00d - Áp dụng từ 01/04 - (Xem chi tiết)</p>
                 <?php endforeach ?>
-
-
-
-
-
                 <?php
                 if (isset($_SESSION["id"]) && ($_SESSION["id"]) > 0) {
 
@@ -296,20 +361,31 @@ margin-top:40px;
                     $p = getOne($a);
 
                 ?> 
-                    <div class= "TinhTrang">
-                    <form action="../control/gioHang_control.php" method="POST" enctype="multipart/form-data">
+                                 <form action="../control/gioHang_control.php" method="POST" enctype="multipart/form-data">
                         <input type="text" hidden value="<?php echo $id_p ?>" name="id_p" id="">
                         <input type="text" hidden value="<?php echo $id_user ?>" name="id_user" id="">
                         <input type="text" hidden value="<?php echo $p['name'] ?>" name="name" id="">
-                        <input type="number" min="1" value="1" name="sl" id="sl">
+                        <div class="soluong">
+                            <b>
+                                Số Lượng :
+                                <input type="number" min="1" value="1" max="<?php echo $details['soluong']?>" name="sl" id="soluonghang">
+                            </b>  
+                        </div>
                         <input type="text" hidden value="<?php echo $p['image'] ?>" name="image" id="">
                         <input type="text" hidden value="<?php echo $p['price'] ?>" name="price" id=""> <br>
-                        <b>Tình Trạng : Còn Hàng</b>
+                        <div class="trangthai">
+                            <b>Sản phẩm còn : <?= $details['soluong'] ?></b>
+                            <p><i class="fa-solid fa-truck"></i> Giao hàng nhanh miễn phí tận nơi</p>
+                            <p><i class="fa-solid fa-shield-halved"></i> Bảo mật thông tin tuyệt đối</p>
+                            <p><i class="fa-solid fa-user-check"></i> Kiểm tra hàng mới thanh toán</p>
+                            <p><i class="fa-solid fa-arrow-right-arrow-left"></i> Bảo dưỡng sản phẩm trọn đời</p>
+                        </div>
+                          
                         <hr>
+                        <div class="giohang">
                         <a href="../control/gioHang_control.php"><button>Thêm vào giỏ hàng</button></a>
+                        </div>
                     </form>
-                    </div>
-                   
                 <?php
 
                 } else {

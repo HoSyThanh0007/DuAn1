@@ -13,64 +13,132 @@
     <title>Document</title>
 </head>
 <style>
-    .container {
-        max-width: 1200px;
-        padding: 0;
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-   td{
-   height: 60px;
-   margin-top: 20px
-    }
-    .c:hover .b{
-    display: block;
-    }
-    .b{
-        padding: 40px;
-        position: absolute;
-        padding-left: 70px;
-        display: none;
-    }
-    .c{
-        display: flex;
-    }
-    .a{
-    width: 40px;
-    border-radius: 50%;
-    border: 0.1875em solid #0F1C3F;
-    height: 40px;
-   }
+ table {
+ 
+ margin-top:30px;
+border-collapse: collapse;
+width: 100%;
+}
+
+th, td {
+ font-size:20px;
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+th {
+background-color: #f2f2f2;
+font-weight: bold;
+}
+
+td.text-center {
+text-align: center;
+}
+
+button {
+background-color: #dc3545;
+color: #fff;
+border: none;
+padding: 8px 12px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+}
+
+button:hover {
+background-color: #c82333;
+}
+
+a.btn {
+background-color: #17a2b8;
+color: #fff;
+border: none;
+padding: 8px 12px;
+border-radius: 4px;
+text-decoration: none;
+font-size: 16px;
+}
+
+a.btn:hover {
+background-color: #138496;
+}
+.c{
+font-size:20px;
+display:flex;
+justify-content: center;
+}
+.a{
+font-size:15px;
+ width: 30px;
+ border-radius: 50%;
+ border: 0.1875em solid #0F1C3F;
+ height: 30px;
+}
+
+ .img {
+     margin-top: 15px;
+     max-width: 80%;
+ }
+
+ .c:hover .b{
+ display: block;
+}
+.b{
+ padding: 40px;
+ position: absolute;
+ padding-left: 70px;
+ display: none;
+
+}
+.signin {
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 8px 18px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 8px;
+}
+
+.signin:hover {
+background-color: #3e8e41;
+}
+a {
+text-decoration: none;
+}
+
 </style>
 
 <body>
     <div class="container">
     <?php session_start()?>
 
-    <header>
-            <div class="logo">
-                <img src="image/logo_1.1.png" alt="">
-            </div>
-            <div class="menu">
-                <ul class="">
-                    <li><a href="index.php">Trang Chủ</a></li>
-                    <li><a href="sanpham.php">Sản Phẩm </a></li>
-                    <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
-                    <li><a href="./lienhe.php">Liên Hệ</a></li>
-                    <li><a href="donHangdaMua.php">Đơn hàng </a></li>
-                    <li><a href="./giohang.php">Giỏ Hàng</a></li>
-                </ul>
-            </div>
+    
+    <header class="header">
+           <a href="#" class="logo"> Thcshop.com</a>
 
-            <div class="authenticate">
-                <?php
+   <nav class="navbar">
+      <div id="close-navbar" class="fas fa-times"></div>
+      <a href="index.php">TRANG CHỦ</a>
+      <a href="sanpham.php">SẢN PHẨM</a>
+      <a href="lienhe.php">LIÊN HỆ</a>
+      <a href="donHangdaMua.php">ĐƠN HÀNG</a>
+      <a href="./giohang.php">GIỎ HÀNG</a>
+   </nav>
+   
+<!-- fỏm đăng nhập đăng kí  -->
+            <?php
                 if (empty($_SESSION["email"])) {
-                    echo ' <div>
-                    <button id="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
-                    <button id="signup"><a href="dangKi.php">Đăng kí</a></button>
+                    echo ' <div >                
+                     <button class="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
                     </div>';
                 } else {
-                    echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
+                    echo '<div class="c"><div class=ab><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p> </div>                  
                     <div class="b">
                     <p> <a href="../control/login_out.php">Đăng xuất</a></p>
                     <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
@@ -80,8 +148,9 @@
                     ';
                 }
                 ?>
-            </div>
+<!--kết thúc form đăng nhập đăng kí -->
         </header>
+
 
        
         <table class="table">
@@ -93,7 +162,6 @@
                 <th class="text-[white]">Số lượng</th>
                 <th class="text-[white]">Giá</th>
                 <th><a class="text-[white]" href="./donHangdaMua.php">back</a></th>
-
                 
                 </tr>
             </thead>

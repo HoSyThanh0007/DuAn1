@@ -74,6 +74,7 @@
                 <th class="text-[white]">Product Desc</th>
                 <th class="text-[white]">Product Image</th>
                 <th class="text-[white]">Product Price</th>
+                <th class="text-[white]">Soluong</th>
                 <th class="text-[white]">Category</th>
                 <th class="text-[white]">Action</th>
             </tr>
@@ -112,6 +113,9 @@
                     <td><img class="w-[50px]" src="<?php echo "../../image/".$product["image"]?>" alt=""></td>
                     <td>
                         <?php echo $product["price"]?>
+                    </td>
+                    <td>
+                        <?php echo $product["soluong"]?>
                     </td>
                     <td>
                         <?php

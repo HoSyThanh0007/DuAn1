@@ -16,16 +16,56 @@ if (isset($_SESSION['id'])&&($_SESSION['id']>0)) {
     <title>Document</title>
 </head>
 <style>
-   td{
-   height: 60px;
-   margin-top: 20px
-    }
+ table {
+ 
+    margin-top:30px;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-   table{
-    margin-top:20px;
-    font-size:16px;
-   }
-   
+th, td {
+    font-size:20px;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #c82333;
+}
+
+a.btn {
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+a.btn:hover {
+  background-color: #138496;
+}
 .c{
    font-size:20px;
    display:flex;
@@ -79,9 +119,7 @@ a {
 
 <body>
 <div class="container">
-   
-
-    <header class="header">
+   <header class="header">
            <a href="#" class="logo"> <i class="fas fa-lightbulb"></i> Fptshop.com</a>
 
    <nav class="navbar">
@@ -92,9 +130,8 @@ a {
       <a href="donHangdaMua.php">ĐƠN HÀNG</a>
       <a href="./giohang.php">GIỎ HÀNG</a>
    </nav>
-   
-<!-- fỏm đăng nhập đăng kí  -->
-            <?php
+
+   <?php
                 if (empty($_SESSION["email"])) {
                     echo ' <div >                
                      <button class="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
@@ -110,8 +147,7 @@ a {
                     ';
                 }
                 ?>
-<!--kết thúc form đăng nhập đăng kí -->
-        </header>
+            </header>
 
 
         <table class="table">
@@ -170,7 +206,7 @@ a {
             </tbody>
         </table>
 
-    </div>
+       </div>
 </body>
 
 </html>

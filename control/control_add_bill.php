@@ -18,10 +18,9 @@ session_start();
     $name = $_POST['name'];
     $diachi = $_POST['diachi'];
     $phone= $_POST['sdt'];
-   $tongTien = $_POST['tongTien'];
+    $tongTien = $_POST['tongTien'];
     $query = "INSERT INTO `bill`(`id`, `id_user`, `fullname`, `phone`, `diachi`,`total_money`) VALUES ('$id','$id_user','$name','$phone','$diachi','$tongTien')";
     
-
     connect($query);
     $cart_query = "SELECT * FROM cart WHERE id_user = $id_user";
     $cart_body = getAll($cart_query);

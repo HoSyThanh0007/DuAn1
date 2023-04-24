@@ -98,7 +98,7 @@ p {
         ?>
   <header class="header">
 
-   <a href="#" class="logo"> <i class="fas fa-lightbulb"></i> THC.com</a>
+   <a href="#" class="logo"> <i class="fas fa-likghtbulb"></i> Thcshop.com</a>
 
    <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>
